@@ -14,6 +14,7 @@ import {
 } from '../../store/BlogsSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import { selecTagsList, selectregistrationUserInfo, selectArticleBySlug } from '../../store/selectors';
+import { v4 as uuidv4 } from 'uuid';
 
 function CreateArticle() {
   const { slug } = useParams();
@@ -82,7 +83,6 @@ function CreateArticle() {
 
   const addTag = () => {
     const tagValue = watch('tagadd');
-    // const titleValue = watch('title');
     if (tagValue) {
       const updatedTags = tagValue;
 
@@ -147,7 +147,7 @@ function CreateArticle() {
         <span className="tags_title_span">Tags</span>
         {tagsList.length > 0 &&
           tagsList.map((tag, index) => (
-            <div className="new_add_tag" key={index}>
+            <div className="new_add_tag" key={uuidv4()}>
               <div className="label_inupt_wrapper">
                 <input
                   className="input_tag input_article"

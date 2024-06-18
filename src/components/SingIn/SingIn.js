@@ -89,7 +89,7 @@ function SingIn() {
       <span className="error_registration">
         {registrationUserInfo ? `${registrationUserInfo.username} Вы успешно вошли в аккаунт` : null}
       </span>
-      <span className="error_registration">{RegistrationNewUserError ? `Логин или пароль не верный` : null}</span>
+      <span className="error_registration">{RegistrationNewUserError ? 'Логин или пароль не верный' : null}</span>
     </form>
   );
 }

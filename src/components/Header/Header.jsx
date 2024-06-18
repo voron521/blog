@@ -1,9 +1,7 @@
 import './Header.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import {
-  selectregistrationUserInfo,
-} from '../../store/selectors';
+import { selectregistrationUserInfo } from '../../store/selectors';
 import userNoRegistAvatar from '../../assets/HeaderImages/pictureIsNoRegistration.png';
 import { setUserInfo } from '../../store/BlogsSlice';
 

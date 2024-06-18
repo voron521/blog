@@ -19,7 +19,7 @@ import {
   setDeleteArticleWindow,
   fetchChangeLikeArticle,
   setModifyBLogs,
-  setDeleteArticle
+  setDeleteArticle,
 } from '../../store/BlogsSlice';
 
 function ArticleBlogs() {
@@ -59,9 +59,8 @@ function ArticleBlogs() {
     const apiKey = userInfo.token;
     dispatch(fetchDeleteArticle({ slugToDelete, apiKey })).then(() => {
       deleteWindow();
-      dispatch(setDeleteArticle(slugToDelete))
+      dispatch(setDeleteArticle(slugToDelete));
       navigate('/');
-
     });
   };
 
