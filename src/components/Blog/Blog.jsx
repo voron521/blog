@@ -10,7 +10,7 @@ import ArticleBlogs from '../ArticleBlogs';
 import EditUser from '../EditUser';
 import Header from '../Header';
 import CreateArticle from '../CreateArticle';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 
 function Blog() {
   const dispatch = useDispatch();
@@ -30,12 +30,14 @@ function Blog() {
     dispatch(setPage(page));
   };
 
-  if (localStorage.getItem('user')) {
+  useEffect(() => {
     const storedUserJson = localStorage.getItem('user');
-    const storedUser = JSON.parse(storedUserJson);
-    dispatch(setregistrationNewUserError(false));
-    dispatch(setUserInfo(storedUser));
-  }
+    if (storedUserJson) {
+      const storedUser = JSON.parse(storedUserJson);
+      dispatch(setregistrationNewUserError(false));
+      dispatch(setUserInfo(storedUser));
+    }
+  }, [dispatch]);
 
   return (
     <Router>
@@ -48,6 +50,7 @@ function Blog() {
           <Route path="/edituser" element={<EditUser />} />
           <Route path="/new-article" element={<CreateArticle />} />
           <Route path="/articles/:slug/edit" element={<CreateArticle />} />
+          <Route path="/blog" element={<Navigate to="/" />} />
           <Route
             path="/"
             element={

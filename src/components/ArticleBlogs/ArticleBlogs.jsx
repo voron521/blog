@@ -8,6 +8,7 @@ import {
   selectDeleteArticleWindow,
   selectBlogsLoad,
 } from '../../store/selectors';
+import { v4 as uuidv4 } from 'uuid';
 import likeFalse from '../../assets/ArticleImages/LikeFalse.svg';
 import likeTrue from '../../assets/ArticleImages/LikeTrue.svg';
 import { Link, useParams, useNavigate } from 'react-router-dom';
@@ -47,7 +48,11 @@ function ArticleBlogs() {
 
     if (tagsArr.length > 0) {
       resultTags = tagsArr.map((tag) => {
-        return <div className="tags">{tag}</div>;
+        return (
+          <div className="tags" key={uuidv4()}>
+            {tag}
+          </div>
+        );
       });
     }
     return resultTags;
