@@ -1,2 +1,2 @@
 gh-ages: https://voron521.github.io/blog/
-vercel: https://aviasales-eosin-two.vercel.app/
+vercel: https://blog-lyart-three-34.vercel.app/
