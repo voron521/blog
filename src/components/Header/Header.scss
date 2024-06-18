@@ -1,0 +1,103 @@
+.header{
+    height: 80px;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 22px;
+    padding-right: 22px;
+}
+
+.header_button{
+    width: 109px;
+    height: 51px;
+    background-color: red;
+    font-size: 16px;
+    background: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    text-decoration: none;
+}
+
+.header_singin_button:hover, .header_singup_button:hover {
+    display: flex;
+    border-radius: 5px;
+    border: 1px solid #52C41A;
+}
+.header_logout_button:hover {
+    
+    border-radius: 5px;
+    border: 1px solid #000000;
+}
+
+.header_home_button{
+    width: 147px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.header_singup_button, .header_logout_button{
+    margin-left: 19px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.right_header{
+    display: flex;
+}
+.userAvatar{
+    max-width: 46px;
+    max-height: 46px;
+    border-radius: 50%;
+    object-fit: cover;
+
+}
+
+.user_info_block{
+    display: flex;
+    align-items: center;
+    
+}
+
+.user_name{
+    font-size: 18px;
+    margin-right: 13px;
+
+}
+
+
+.header_edit_button{
+    display: flex;
+    color: black;
+    text-decoration: none;
+    align-items: center;
+    font-size: 16px;
+}
+
+.create_article_button{
+    width: 112px;
+    height: 31px;
+    
+    font-size: 14px;
+    
+    border: 1px solid #52C41A;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #52C41A;
+    text-decoration: none;
+    display: flex;
+    margin-right: 27px;
+    text-decoration: none;
+    align-items: center;
+    font-size: 16px;
+}

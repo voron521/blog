@@ -1,0 +1,27 @@
+html,
+body {
+	margin: 0;
+	padding: 0;
+	font-family: 'Open Sans', sans-serif;
+	background-color: rgb(217, 217, 226);
+}
+
+* {
+	box-sizing: border-box;
+	font-family: 'Open Sans', sans-serif;
+	
+  }
+
+.mainApp{
+	max-width: 1440px;
+	min-height: 977px;
+	background-color: #EBEEF3;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding-bottom: 17px;
+}
+.pagination{
+	margin-top: 26px;
+}

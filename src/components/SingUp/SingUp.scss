@@ -1,0 +1,140 @@
+.create_new_account{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #D9D9D9;
+    border-radius: 6px;
+}
+.create_new_account{
+    width: 384px;
+    height: 599px;
+    background-color: white;
+    margin-top: 59px;
+    box-shadow: 0px 12px 16px 0px rgba(0, 0, 0, 0.5);
+}
+.input_create_accouont{
+    width:83%;
+    margin: 0 auto;
+    border: 1px solid #D9D9D9;
+    border-radius: 4px;
+    height: 40px;
+    padding: 8px 12px;
+    
+}
+.input_create_accouont::placeholder{
+    color: #D9D9D9;
+}
+.label_form{
+    margin-left: 9%;
+    font-size: 14px;
+    margin-top: 12px;
+    margin-bottom: 5px;
+    
+}
+.create_form_title{
+    display: block;
+    margin: 0 auto;
+    margin-top: 48px;
+    font-size: 28px;
+    margin-bottom: 10px;
+   
+    
+}
+
+.chekbox_agree_div{
+    
+    display: flex;
+    width: 83%;
+    margin: 0 auto;
+    margin-top: 29px;
+    align-items: start;
+}
+
+.label_form_check{
+    margin-left: 34px;
+}
+
+.check_agree{
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	border: 0;
+	padding: 0;
+	clip: rect(0 0 0 0);
+	overflow: hidden;
+
+
+}
+.label_form_check::before{
+	display: block;
+	content: '';
+	height: 20px;
+	width: 20px;
+	
+	position: relative;
+	// left: 20px;
+	z-index: 20;
+	border: 1px solid #9ABBCE;
+	border-radius: 2px;
+	left: -30px;
+    bottom: -25px;
+}
+
+.label_form_check::after{
+	display: block;
+	content: '';
+	height: 12px;
+	width: 12px;
+	position: relative;
+	z-index: 20;
+	border: 1px solid #2196F3;
+	transform: rotate(-130deg);
+	clip-path: rect(0 50% 90% 0);
+	transform: scale(0);
+    left: -28px;
+    top: -35px;
+}
+.check_agree:checked + .label_form_check::after{
+    transform: rotate(-130deg) scale(1);
+    border: 1px solid white;
+
+}
+
+.check_agree:checked + .label_form_check::before{
+    border: 1px solid #2196F3;
+    background-color: #2196F3;
+
+}
+
+.submit_button{
+    height: 40px;
+    width: 83%;
+    margin: 0 auto;
+    background-color: #1890FF;
+    color: white;
+    border-radius: 4px;
+    border: none;
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.error_input{
+    font-size: 14px;
+    margin-left: 9%;
+    margin-right: 9%;
+    color: red;
+}
+.error_registration{
+    margin: 0 auto;
+    color: red;
+    font-size: 16px;
+}
+
+.signin_link{
+    text-decoration: none;
+    margin-left: 4px;
+}
+.signin_span{
+    margin: 0 auto;
+    font-size: 16px;
+}
