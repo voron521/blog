@@ -28,14 +28,23 @@ function Blog() {
 
   const onChangePage = (page) => {
     dispatch(setPage(page));
+    const currentPage = JSON.stringify(page);
+    localStorage.setItem('currentPage', currentPage);
+
   };
 
   useEffect(() => {
     const storedUserJson = localStorage.getItem('user');
+    const storedCurrentPage = localStorage.getItem('currentPage');
     if (storedUserJson) {
       const storedUser = JSON.parse(storedUserJson);
       dispatch(setregistrationNewUserError(false));
       dispatch(setUserInfo(storedUser));
+    }
+
+    if (storedCurrentPage) {
+      const currentPage = JSON.parse(storedCurrentPage);
+      dispatch(setPage(currentPage));
     }
   }, [dispatch]);
 
@@ -62,6 +71,7 @@ function Blog() {
                   total={totalResults}
                   pageSize={limitArticles}
                   onChange={onChangePage}
+                  current={currentPage}
                 />
               </>
             }

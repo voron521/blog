@@ -1,6 +1,6 @@
 import './CreateArticle.scss';
 import React, { useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import {
   setMyArticles,
@@ -11,6 +11,7 @@ import {
   fetchUpdateArticle,
   setAddOneArticle,
   setModifyBLogs,
+  setBlogsLoad
 } from '../../store/BlogsSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import { selecTagsList, selectregistrationUserInfo, selectArticleBySlug } from '../../store/selectors';
@@ -30,8 +31,10 @@ function CreateArticle() {
   } = useForm();
   const registrationUserInfo = useSelector(selectregistrationUserInfo);
   const article = useSelector(selectArticleBySlug(slug));
+  const navigate = useNavigate();
 
   const addNewArticle = async (event) => {
+    navigate('/');
     const data = {
       article: {
         title: event.title,
@@ -51,14 +54,17 @@ function CreateArticle() {
           dispatch(setModifyBLogs({ nameItem, item, slug }));
         }
       } else {
+        
+        dispatch(setBlogsLoad())
         res = await dispatch(fetchNewArticle({ data, apiKey }));
-
         if (res.meta.requestStatus === 'fulfilled') {
           dispatch(setAddOneArticle(res.payload.article));
+          dispatch(setBlogsLoad())
         }
       }
 
       dispatch(setTagsList('clean'));
+      
       if (!res.error) {
         dispatch(setMyArticles(data));
         reset({

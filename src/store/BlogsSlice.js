@@ -244,6 +244,9 @@ const BlogSlice = createSlice({
       state.blogsLoad = true;
       state.totalResults = action.payload.payload.articlesCount;
     },
+    setBlogsLoad(state) {
+      state.blogsLoad = !state.blogsLoad;
+    },
     setPage(state, action) {
       state.currentPage = action.payload;
     },
@@ -348,6 +351,7 @@ export const {
   setModifyBLogs,
   setAddOneArticle,
   setDeleteArticle,
+  setBlogsLoad
 } = BlogSlice.actions;
 
 export default BlogSlice.reducer;
