@@ -30,7 +30,6 @@ function Blog() {
     dispatch(setPage(page));
     const currentPage = JSON.stringify(page);
     localStorage.setItem('currentPage', currentPage);
-
   };
 
   useEffect(() => {

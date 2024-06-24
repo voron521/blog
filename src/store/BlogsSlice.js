@@ -351,7 +351,7 @@ export const {
   setModifyBLogs,
   setAddOneArticle,
   setDeleteArticle,
-  setBlogsLoad
+  setBlogsLoad,
 } = BlogSlice.actions;
 
 export default BlogSlice.reducer;

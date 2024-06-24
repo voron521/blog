@@ -11,7 +11,7 @@ import {
   fetchUpdateArticle,
   setAddOneArticle,
   setModifyBLogs,
-  setBlogsLoad
+  setBlogsLoad,
 } from '../../store/BlogsSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import { selecTagsList, selectregistrationUserInfo, selectArticleBySlug } from '../../store/selectors';
@@ -54,17 +54,14 @@ function CreateArticle() {
           dispatch(setModifyBLogs({ nameItem, item, slug }));
         }
       } else {
-        
-        dispatch(setBlogsLoad())
+        dispatch(setBlogsLoad());
         res = await dispatch(fetchNewArticle({ data, apiKey }));
         if (res.meta.requestStatus === 'fulfilled') {
           dispatch(setAddOneArticle(res.payload.article));
-          dispatch(setBlogsLoad())
+          dispatch(setBlogsLoad());
         }
       }
-
       dispatch(setTagsList('clean'));
-      
       if (!res.error) {
         dispatch(setMyArticles(data));
         reset({
